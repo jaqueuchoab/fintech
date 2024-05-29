@@ -14,7 +14,7 @@ type IDataContext = {
 };
 
 // Tipo de venda, dado retornado do fecth
-type IVenda = {
+export type IVenda = {
   id: string;
   nome: string;
   preco: number;
@@ -54,9 +54,9 @@ export const DataContextProvider = ({ children }: React.PropsWithChildren) => {
 
   //. Retorno da useFetch, na url modificada justamente de acordo com o inicio e fim do periodo em que deseja-se ver os relatórios
   const { data, loading, error } = useFetch<IVenda[]>(
-    `https://data.origamid.dev/vendas/?inicio=${inicio}&?final=${final}`,
+    `https://data.origamid.dev/vendas/?inicio=${inicio}&final=${final}`,
   );
-  console.log(data);
+  console.log(data, inicio, final);
   
   return (
     // Retorno do provedor do contexto e seu valores que podem ser acessados pelo children 
