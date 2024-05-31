@@ -98,6 +98,7 @@ ul {
   flex: 1;
   font-size: 1.125rem;
   text-decoration: none;
+  margin: .25rem 0;
   color: var(--color-1);
   padding: var(--gap-s) 0;
 }
@@ -138,4 +139,10 @@ ul {
 .venda a {
   text-decoration: none;
   color: inherit;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
